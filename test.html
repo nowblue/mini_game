@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            background-color: black;
+        }
+        .box {
+            position: absolute;
+            top: 0;
+            left: calc(50% - 114px); /* 가운데 정렬을 위해 수정 */
+            width: 228px; /* 박스 너비 조정 */
+            height: 228px; /* 박스 높이 조정 */
+            background: url("./img/cha1.png") no-repeat;
+        }
+        .box[data-direction='right'] {
+            background-position: 0 -228px;
+        }
+        .box[data-direction='up'] {
+            background-position: 0 -456px;
+        }
+        .box[data-direction='left'] {
+            background-position: 0 -684px;
+        }
+
+        .box[data-walking='true'] {
+            animation: walking 0.6s steps(4) infinite;
+        }
+        @keyframes walking {
+            from {
+                background-position-x: 0;
+            }
+            to {
+                background-position-x: -912px; /* 전체 이미지 너비에 맞게 수정 */
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box" data-direction="down" data-walking="false"></div>
+
+<script>
+    let box = document.querySelector('.box');
+
+    document.addEventListener('keydown', (event) => {
+        let currentDirection = 'down';
+
+        if (event.key === 'ArrowLeft') {
+            currentDirection = 'left';
+        } else if (event.key === 'ArrowRight') {
+            currentDirection = 'right';
+        } else if (event.key === 'ArrowUp') {
+            currentDirection = 'up';
+        } else if (event.key === 'ArrowDown') {
+            currentDirection = 'down';
+        }
+
+        box.dataset.direction = currentDirection;
+        box.dataset.walking = 'true';
+    });
+
+    document.addEventListener('keyup', () => {
+        box.dataset.walking = 'false';
+    });
+
+</script>
+</body>
+</html>

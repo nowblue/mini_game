@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Page</title>
+    <link rel="stylesheet" href="./game.css">
+    <script defer src="./game.js"></script>
+</head>
+<body>
+    <div id="game-container">
+        <div class="bg">
+            <img src="./img/picture-b.png" data-index="0" class="picture">
+            <img src="./img/bed-b.png" data-index="1" class="bed">
+            <img src="./img/closet-b.png" data-index="2" class="closet">
+            <img src="./img/desk-b.png" data-index="3" class="desk">
+            <img src="./img/shelf-b.png" data-index="4" class="shelf">
+            <img src="./img/ground-b.png" alt="" data-index="5" class="ground">
+            <img src="./img/window.PNG" alt="" class="window">
+        </div>
+        
+        <div id="todo-container">
+            <div id="todo-header">
+                <h2>할 일 목록</h2>
+                <button id="toggle-button">열기</button>
+            </div>
+            <div id="todo-content">
+                <ul>
+                    <li>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="checkbox-input" data-index="0">
+                        </label>
+                        액자 위치 조정하기
+                    </li>
+                    <li>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="checkbox-input" data-index="1">
+                        </label>
+                        침대 정돈
+                    </li>
+                    <li>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="checkbox-input" data-index="2">
+                        </label>
+                        옷장 옷 걸기
+                    </li>
+                    <li>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="checkbox-input" data-index="3">
+                        </label>
+                        책상 정리
+                    </li>
+                    <li>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="checkbox-input" data-index="4">
+                        </label>
+                        책장 정리
+                    </li>
+                    <li>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="checkbox-input" data-index="5">
+                        </label>
+                        바닥 먼지 치우기
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="setting_box">
+            <img src="./img/settings.png" alt="" class="settings" id="settings-button">
+        </div>
+        
+        <!-- <div id="character" data-direction="down" data-walking="false"></div> -->
+        <div id="character"></div>
+        
+        <div id="question" class="question">
+            <p>숫자키 입력!</p>
+        </div>
+
+        
+
+        <div id="setting-modal" class="modal">
+            <div class="modal-content">
+                <a href="./index.html">시작 페이지로 돌아가기</a>
+                <a href="./start.html">에피소드 다시보기</a>
+                <a href="./test.html">도움말</a>
+                
+                <button id="close-modal-button" class="close-modal">닫기</button>
+            </div>
+        </div>
+        
+        <div class="tool_box">
+            <img src="./img/tool1.png" alt="" class="tool" data-hover="각도기">
+            <img src="./img/tool2.png" alt="" class="tool" data-hover="돌돌이">
+            <img src="./img/tool3.png" alt="" class="tool" data-hover="옷걸이">
+            <img src="./img/tool4.png" alt="" class="tool" data-hover="필통">
+            <img src="./img/tool5.png" alt="" class="tool" data-hover="책꽂이">
+            <img src="./img/tool6.png" alt="" class="tool" data-hover="청소기">
+        </div>
+    </div>
+</body>
+</html>
